@@ -10,7 +10,7 @@ import os
 from llama_cpp import Llama
 
 MODEL_DIR = "models"
-MODEL_FILE = "Llama-3.2-1B-Instruct-Uncensored.IQ3_M.gguf"
+MODEL_FILE = "Llama-3.2-1B-Instruct-Q4_K_M.gguf"
 
 class LLMEngine:
     def __init__(self):
