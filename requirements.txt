@@ -1,0 +1,8 @@
+llama-cpp-python
+faiss-cpu
+sentence-transformers
+networkx
+matplotlib
+huggingface_hub
+tqdm
+colorama
