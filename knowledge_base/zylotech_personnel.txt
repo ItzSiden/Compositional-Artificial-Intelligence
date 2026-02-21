@@ -1,0 +1,56 @@
+BIOGRAPHICAL DATABASE - MSCP TEST PERSONNEL
+============================================
+These are fictional people created to test MSCP knowledge retrieval.
+
+## Mira Voss
+Full name: Mira Elaine Voss
+Born: March 14, 1987, in Reykjavik, Iceland
+Current role: CEO of Zylotech Corporation (since 2022)
+Previous roles:
+  - VP of Product at Nexon Labs (2018-2022)
+  - Senior Engineer at Voltra Systems (2013-2018)
+Education: BSc Computer Science, University of Edinburgh (2009); MBA, INSEAD (2013)
+Notable achievement: Led the development of ZyloChip A3, the first 5nm chip designed entirely by an AI-assisted design system
+Personal: Married to architect Sven Voss, two children (ages 8 and 11)
+Hobby: Competitive ice climbing
+Quote: "The best interface is the one that disappears."
+
+## Dalen Okafor
+Full name: Dalen Chukwuemeka Okafor
+Born: July 22, 1991, in Lagos, Nigeria
+Current role: CTO of Zylotech Corporation (since 2023)
+Previous roles:
+  - Research Scientist at DeepMaterials Lab (2019-2023)
+  - Postdoctoral Fellow, Stanford Nanoscience Center (2019)
+Education: BEng Electrical Engineering, University of Lagos (2013); PhD Quantum Materials, MIT (2019)
+PhD thesis: "Topological Insulator Heterostructures for Low-Power Logic Gates"
+Notable achievement: Invented the MagFlow fast-charging protocol used in ZyloPad X9
+Personal: Single, lives in Neon Bay
+Hobby: Playing jazz piano, urban beekeeping
+Quote: "Hardware is just frozen software."
+
+## Priya Selvan
+Full name: Priya Anandhi Selvan
+Born: November 3, 1990, in Chennai, India
+Current role: Head of Design at Zylotech Corporation (since 2024)
+Previous roles:
+  - Principal Designer at Arkform Studio (2016-2024)
+  - UX Researcher at Human Interface Group (2014-2016)
+Education: BDes Industrial Design, IIT Bombay (2012); MA Interaction Design, Royal College of Art, London (2014)
+Notable achievement: Designed the ZyloWatch Ultra casing using a single-piece titanium milling process
+Personal: Partner is filmmaker Asha Rao
+Hobby: Pottery, bouldering
+Quote: "Color is the first language users speak."
+
+## Rowan Thatch
+Full name: Rowan James Thatch
+Born: February 9, 1985, in Bristol, UK
+Current role: Head of Security at Zylotech Corporation (since 2022)
+Previous roles:
+  - Senior Penetration Tester at CipherShield (2015-2022)
+  - Signals Intelligence Analyst, GCHQ (2008-2015)
+Education: BSc Mathematics, University of Bristol (2007); CISSP certified (2012); CEH certified (2011)
+Notable achievement: Discovered and patched the "GhostBridge" vulnerability in ZyloOS 2.x which could allow Bluetooth-based authentication bypass
+Personal: Divorced, one teenage daughter
+Hobby: Amateur radio (callsign: G4RTX), lockpicking sport
+Quote: "Security is not a product. It's a mindset."

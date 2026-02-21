@@ -1,0 +1,65 @@
+ZYLOTECH CORPORATION - INTERNAL PRODUCT DOCUMENTATION
+======================================================
+CONFIDENTIAL - FOR INTERNAL USE ONLY
+Document Version: 4.2 | Updated: 2026
+
+## About Zylotech
+Zylotech Corporation is a fictional internal company used for MSCP testing.
+Founded in 2024 by CEO Mira Voss and CTO Dalen Okafor.
+Headquarters: Tower 9, Sector 7, Neon Bay, Archipelago Islands.
+Employee count: 847 staff across 3 continents.
+
+## Products
+
+### ZyloPad X9
+- Our flagship tablet released March 2026
+- 14-inch foldable OLED display with 240Hz refresh rate
+- Powered by the ZyloChip A3 processor (12-core, 5nm)
+- Battery: 9800mAh, charges to 100% in 18 minutes via MagFlow charging
+- Available in colors: Obsidian Black, Ghost White, Coral Dusk
+- Price: $1,299 USD
+- Known issue: ZyloPad X9 units manufactured before serial number ZX9-004500 have a screen flicker bug when brightness is set below 20% — fix is to update firmware to v2.1.3
+
+### ZyloWatch Ultra
+- Smartwatch released January 2026
+- Circular 1.8-inch sapphire display
+- Health features: blood glucose monitoring (no finger prick), sleep apnea detection, hydration sensor
+- Battery lasts 11 days on a single charge
+- Strap size: 22mm universal
+- Price: $449 USD
+- Pairs with ZyloPad and ZyloPhone via ZyloSync protocol
+
+### ZyloPhone 15 Pro
+- Flagship smartphone, released February 2026
+- 6.9-inch Super Retina display, 120Hz ProMotion
+- Triple camera: 200MP main, 48MP ultrawide, 12MP periscope zoom (10x optical)
+- ZyloChip A3 processor, 16GB RAM, available in 256GB / 512GB / 1TB
+- Price: $1,099 (256GB), $1,299 (512GB), $1,599 (1TB)
+- Exclusive feature: HoloView mode — projects a small 3D hologram 4cm above the screen using structured light array
+- Colors: Midnight, Starlight, Pacific Blue, Titanium Red
+
+## Internal Systems
+
+### ZyloOS 3.0
+- Zylotech's proprietary operating system used across all devices
+- Based on a modified Android 16 kernel
+- Key feature: Adaptive AI Shell — the UI rearranges itself based on time of day and user habits
+- App store: ZyloMarket, contains 180,000 apps as of 2026
+
+### ZyloCloud
+- Internal cloud platform hosted on Archipelago Islands data centers
+- Storage plans: 100GB free, 1TB ($4.99/mo), 10TB ($19.99/mo)
+- ZyloCloud Drive syncs across all Zylotech devices in real time
+- API endpoint: api.zylocloud.internal (internal network only)
+
+## Key Personnel
+- CEO: Mira Voss (formerly VP at Nexon Labs)
+- CTO: Dalen Okafor (PhD in quantum materials, MIT 2019)
+- Head of Design: Priya Selvan
+- Head of Security: Rowan Thatch
+
+## Support & Troubleshooting
+- Support line: 1-800-ZYL-TECH (Mon-Fri, 8am-8pm EST)
+- ZyloPad X9 screen flicker: update to firmware v2.1.3
+- ZyloWatch Ultra not syncing: toggle ZyloSync off/on in settings, ensure both devices are on ZyloOS 3.0+
+- ZyloPhone 15 Pro HoloView not working: HoloView requires minimum 40% battery and is disabled in temperatures below 10°C

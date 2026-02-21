@@ -1,0 +1,70 @@
+ZYLOTECH DEVELOPER API GUIDE - ZyloCloud SDK v2.3
+==================================================
+Internal Use Only | ZyloDev Portal: dev.zylocloud.internal
+
+## Authentication
+All ZyloCloud API calls require a Bearer token.
+Obtain a token via POST to /auth/token with your ZyloID credentials.
+
+Example:
+  POST https://api.zylocloud.internal/auth/token
+  Body: { "zylo_id": "your@email.com", "secret": "your_api_secret" }
+  Returns: { "token": "zlc_xxxxxxxxxxxx", "expires_in": 3600 }
+
+Always pass the token as: Authorization: Bearer zlc_xxxxxxxxxxxx
+
+## ZyloCloud Storage API
+
+### Upload a file
+  POST /v2/storage/upload
+  Headers: Authorization, Content-Type: multipart/form-data
+  Body: file (binary), folder_path (string, optional)
+  Returns: { "file_id": "f_abc123", "url": "...", "size_bytes": 1048576 }
+
+### Download a file
+  GET /v2/storage/file/{file_id}
+  Returns: binary stream
+
+### List files in a folder
+  GET /v2/storage/list?folder=documents&limit=50&offset=0
+  Returns: { "files": [...], "total": 120 }
+
+### Delete a file
+  DELETE /v2/storage/file/{file_id}
+  Returns: { "deleted": true }
+
+## ZyloSync Protocol (Device-to-Device)
+ZyloSync uses a proprietary UDP-based protocol over port 51820.
+To enable ZyloSync in code:
+  import zylosdk
+  sync = zylosdk.ZyloSync(device_id="your_device_id", token="zlc_xxxx")
+  sync.connect()
+  sync.push_file("local_path.txt", remote_path="docs/")
+  sync.disconnect()
+
+## ZyloAI Gateway (Internal LLM API)
+Zylotech runs an internal LLM called ZyloMind-7B, accessible via:
+  POST /v2/ai/complete
+  Body: { "model": "zylomind-7b", "prompt": "...", "max_tokens": 512, "temperature": 0.3 }
+  Returns: { "text": "...", "tokens_used": 240 }
+
+Rate limit: 100 requests/minute per API key.
+ZyloMind-7B was fine-tuned on Zylotech's internal codebase and documentation.
+
+## Error Codes
+  ZE-001: Invalid or expired token → re-authenticate
+  ZE-002: File not found
+  ZE-003: Storage quota exceeded → upgrade plan
+  ZE-004: Rate limit hit → wait 60 seconds
+  ZE-099: Internal server error → contact dev-support@zylotech.internal
+
+## SDK Installation
+  pip install zylosdk==2.3.0
+  npm install @zylotech/cloudsdk@2.3.0
+
+## Python Quick Start
+  import zylosdk
+  client = zylosdk.Client(token="zlc_xxxxxxxxxxxx")
+  files = client.storage.list(folder="reports")
+  for f in files:
+      print(f.name, f.size_bytes)
