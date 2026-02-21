@@ -72,7 +72,7 @@ class VectorBrain:
         else:
             print(f"[Layer 2] Knowledge base up to date ({len(self.metadata)} chunks total).")
 
-    def _chunk_text(self, text: str, chunk_size: int = 200, overlap: int = 30) -> list:
+    def _chunk_text(self, text: str, chunk_size: int = 150, overlap: int = 20) -> list:
         """Split text into overlapping word chunks."""
         words = text.split()
         chunks = []
