@@ -142,7 +142,7 @@ def main():
         graph_concepts = concept_graph.retrieve(user_input)
 
         # Step 3: Layer 2 — Retrieve relevant FAISS chunks
-        faiss_chunks = vector_brain.retrieve(user_input, top_k=3)
+        faiss_chunks = vector_brain.retrieve(user_input, top_k=5)
 
         # Step 4: Layer 4 — Get formatted chat history
         chat_history = memory_buffer.format_for_prompt()
