@@ -14,53 +14,29 @@ It beats cloud AI for private, domain-specific knowledge tasks by combining:
 
 ## How the 5 Layers Work Together
 
-Architects:
+flowchart TD
 
-[USER PROMPT]
-      |
-      |  "Write a Python script to visualize my server network."
-      v
+    A[USER PROMPT<br/>"Write a Python script to visualize my server network."]
 
-+--------------------------------------------------------------+
-| LAYER 4: Short-Term Memory Buffer                            |
-| - Checks last 5 messages                                     |
-| - Adds context: (User previously asked about 'Ubuntu')       |
-+----------------------------+---------------------------------+
-                             |
-             +---------------+---------------+
-             |                               |
-             v                               v
+    B[LAYER 4<br/>Short-Term Memory Buffer<br/>- Checks last 5 messages<br/>- Adds context]
 
-+-----------------------------+   +-----------------------------+
-| LAYER 3: Concept Graph      |   | LAYER 2: Vector Brain       |
-| (NetworkX)                  |   | (FAISS + MiniLM)            |
-| - Node matched: Python      |   | - Embeds prompt             |
-| - Pulls related nodes:      |   | - Retrieves 3 closest       |
-|   [Matplotlib, Linux]       |   |   text chunks               |
-+-------------+---------------+   +-------------+---------------+
-              |                                 |
-              +---------------+-----------------+
-                              |
-                              v
+    C[LAYER 3<br/>Concept Graph (NetworkX)<br/>- Node matched: Python<br/>- Related: Matplotlib, Linux]
 
-+--------------------------------------------------------------+
-| LAYER 5: Prompt Assembly & Personality Injector              |
-| - Combines: Graph Keywords + FAISS Chunks + User Prompt      |
-| - Injects: "You are a concise coder. temp=0.2"                |
-+-----------------------------+--------------------------------+
-                              |
-                              v
+    D[LAYER 2<br/>Vector Brain (FAISS + MiniLM)<br/>- Embeds prompt<br/>- Retrieves 3 closest chunks]
 
-+--------------------------------------------------------------+
-| LAYER 1: Small Language Core (Inference Engine)              |
-| - llama.cpp running Llama-3.2-1B.Q4_K_M.gguf (< 1GB RAM)     |
-| - Reads the massive assembled prompt                         |
-| - Generates clean syntax and grammar                         |
-+-----------------------------+--------------------------------+
-                              |
-                              v
+    E[LAYER 5<br/>Prompt Assembly & Personality Injector<br/>- Combines Graph + FAISS + Prompt<br/>- Injects style rules]
 
-                        [ AI RESPONSE ]
+    F[LAYER 1<br/>Small Language Core<br/>llama.cpp + Llama-3.2-1B.Q4_K_M.gguf<br/>- Generates final response]
+
+    G[AI RESPONSE]
+
+    A --> B
+    B --> C
+    B --> D
+    C --> E
+    D --> E
+    E --> F
+    F --> G
 
 ---
 
