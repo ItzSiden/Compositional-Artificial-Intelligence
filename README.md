@@ -11,32 +11,39 @@ It beats cloud AI for private, domain-specific knowledge tasks by combining:
 - **Layer 5** — Intelligent prompt assembler + persona injector
 
 ---
-
 ## How the 5 Layers Work Together
-
+```mermaid
 flowchart TD
-
-    A[USER PROMPT<br/>"Write a Python script to visualize my server network."]
-
-    B[LAYER 4<br/>Short-Term Memory Buffer<br/>- Checks last 5 messages<br/>- Adds context]
-
-    C[LAYER 3<br/>Concept Graph (NetworkX)<br/>- Node matched: Python<br/>- Related: Matplotlib, Linux]
-
-    D[LAYER 2<br/>Vector Brain (FAISS + MiniLM)<br/>- Embeds prompt<br/>- Retrieves 3 closest chunks]
-
-    E[LAYER 5<br/>Prompt Assembly & Personality Injector<br/>- Combines Graph + FAISS + Prompt<br/>- Injects style rules]
-
-    F[LAYER 1<br/>Small Language Core<br/>llama.cpp + Llama-3.2-1B.Q4_K_M.gguf<br/>- Generates final response]
-
-    G[AI RESPONSE]
-
+    A["🧑 USER PROMPT\n'Write a Python script to visualize my server network.'"]
+    
     A --> B
-    B --> C
-    B --> D
-    C --> E
-    D --> E
+
+    B["⚡ LAYER 4: Short-Term Memory Buffer\n• Checks last 5 messages\n• Adds context: User previously asked about 'Ubuntu'"]
+
+    B --> C & D
+
+    C["🕸️ LAYER 3: Concept Graph\nNetworkX\n• Node matched: Python\n• Pulls related nodes: Matplotlib, Linux"]
+
+    D["🧠 LAYER 2: Vector Brain\nFAISS + MiniLM\n• Embeds prompt\n• Retrieves 3 closest text chunks"]
+
+    C & D --> E
+
+    E["🔧 LAYER 5: Prompt Assembly & Personality Injector\n• Combines: Graph Keywords + FAISS Chunks + User Prompt\n• Injects: 'You are a concise coder. temp=0.2'"]
+
     E --> F
-    F --> G
+
+    F["⚙️ LAYER 1: Small Language Core\nllama.cpp · Llama-3.2-1B.Q4_K_M.gguf · Under 1GB\n• Reads the assembled prompt\n• Generates perfect syntax and grammar"]
+
+    F --> G["✅ AI RESPONSE"]
+
+    style A fill:#1f2937,stroke:#58a6ff,color:#e6edf3
+    style B fill:#1f2937,stroke:#58a6ff,color:#e6edf3
+    style C fill:#1f2937,stroke:#3fb950,color:#e6edf3
+    style D fill:#1f2937,stroke:#f78166,color:#e6edf3
+    style E fill:#1f2937,stroke:#d2a8ff,color:#e6edf3
+    style F fill:#1f2937,stroke:#ffa657,color:#e6edf3
+    style G fill:#1f2937,stroke:#58a6ff,color:#58a6ff
+```
 
 ---
 
