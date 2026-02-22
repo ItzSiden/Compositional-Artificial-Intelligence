@@ -14,25 +14,19 @@ It beats cloud AI for private, domain-specific knowledge tasks by combining:
 ## How the 5 Layers Work Together
 ```mermaid
 flowchart TD
-    A["🧑 USER PROMPT\n'Write a Python script to visualize my server network.'"]
-    
-    A --> B
+    A["🧑 USER PROMPT<br/>Write a Python script to visualize my server network."]
 
-    B["⚡ LAYER 4: Short-Term Memory Buffer\n• Checks last 5 messages\n• Adds context: User previously asked about 'Ubuntu'"]
+    A --> B["⚡ LAYER 4: Short-Term Memory Buffer<br/>• Checks last 5 messages<br/>• Adds context: User previously asked about Ubuntu"]
 
     B --> C & D
 
-    C["🕸️ LAYER 3: Concept Graph\nNetworkX\n• Node matched: Python\n• Pulls related nodes: Matplotlib, Linux"]
+    C["🕸️ LAYER 3: Concept Graph<br/>NetworkX<br/>• Node matched: Python<br/>• Pulls related nodes: Matplotlib, Linux"]
 
-    D["🧠 LAYER 2: Vector Brain\nFAISS + MiniLM\n• Embeds prompt\n• Retrieves 3 closest text chunks"]
+    D["🧠 LAYER 2: Vector Brain<br/>FAISS + MiniLM<br/>• Embeds prompt<br/>• Retrieves 3 closest text chunks"]
 
-    C & D --> E
+    C & D --> E["🔧 LAYER 5: Prompt Assembly and Personality Injector<br/>• Combines: Graph Keywords + FAISS Chunks + User Prompt<br/>• Injects personality: You are a concise coder. temp=0.2"]
 
-    E["🔧 LAYER 5: Prompt Assembly & Personality Injector\n• Combines: Graph Keywords + FAISS Chunks + User Prompt\n• Injects: 'You are a concise coder. temp=0.2'"]
-
-    E --> F
-
-    F["⚙️ LAYER 1: Small Language Core\nllama.cpp · Llama-3.2-1B.Q4_K_M.gguf · Under 1GB\n• Reads the assembled prompt\n• Generates perfect syntax and grammar"]
+    E --> F["⚙️ LAYER 1: Small Language Core<br/>llama.cpp · Llama-3.2-1B.Q4_K_M.gguf · Under 1GB<br/>• Reads the assembled prompt<br/>• Generates perfect syntax and grammar"]
 
     F --> G["✅ AI RESPONSE"]
 
@@ -42,7 +36,7 @@ flowchart TD
     style D fill:#1f2937,stroke:#f78166,color:#e6edf3
     style E fill:#1f2937,stroke:#d2a8ff,color:#e6edf3
     style F fill:#1f2937,stroke:#ffa657,color:#e6edf3
-    style G fill:#1f2937,stroke:#58a6ff,color:#58a6ff
+    style G fill:#1f2937,stroke:#3fb950,color:#e6edf3
 ```
 
 ---
