@@ -1,4 +1,5 @@
-# 🧠 MSCP — Multi-System Compositional Pipeline
+# Compositional-Artificial-Intelligence
+## 🧠 MSCP — Multi-System Compositional Pipeline
 
 A **5-Layer local AI system** that runs entirely on CPU with no GPU required.
 It beats cloud AI for private, domain-specific knowledge tasks by combining:
