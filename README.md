@@ -12,6 +12,7 @@ It beats cloud AI for private, domain-specific knowledge tasks by combining:
 
 ---
 ## How the 5 Layers Work Together (Example)
+---
 ```mermaid
 flowchart TD
     A["USER PROMPT:<br/>Write a Python script to visualize my server network."]
@@ -20,11 +21,11 @@ flowchart TD
 
     B --> C & D
 
-    C["LAYER 3: Concept Graph<br/>NetworkX<br/>Node matched: Python<br/>Pulls related nodes: ___, ___"]
+    C["LAYER 3: Concept Graph<br/>NetworkX<br/>Node matched: Python<br/>Pulls related nodes: ___."]
 
     D["LAYER 2: Vector Brain<br/>FAISS + MiniLM<br/>Embeds prompt<br/>Retrieves 3 closest text chunks"]
 
-    C & D --> E["LAYER 5: Prompt Assembly and Personality Injector<br/>Combines: Graph Keywords + FAISS Chunks + User Prompt<br/>Injects personality: You are ___. temp=0.7"]
+    C & D --> E["LAYER 5: Prompt Assembly and Personality Injector<br/>Combines: Graph Keywords + FAISS Chunks + User Prompt<br/>Injects personality: You are... temp=0.7"]
 
     E --> F["LAYER 1: Small Language Core<br/>Base: Llama-3.2-1B.Q4_K_M.gguf (Under 1GB RAM)<br/>Reads the assembled prompt<br/>Generates perfect syntax and grammar"]
 
@@ -41,7 +42,7 @@ flowchart TD
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 mscp/
@@ -63,55 +64,7 @@ mscp/
 
 ---
 
-## 🚀 Setup on GitHub Codespaces
-
-### Step 1: Open in Codespaces
-Click **Code → Codespaces → Create codespace** on this repo.
-
-### Step 2: Run the setup script
-```bash
-chmod +x setup.sh
-./setup.sh
-```
-This will:
-- Create a Python virtual environment (`mscp_env/`)
-- Install all dependencies
-- Download the Llama 3.2 1B model (~700MB) from HuggingFace
-
-### Step 3: Activate the environment
-```bash
-source mscp_env/bin/activate
-```
-
-### Step 4: Run MSCP
-```bash
-python main.py
-```
-
----
-
-## 🖐️ Manual Model Download (if setup.sh fails)
-
-1. Go to: https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF
-2. Download: `Llama-3.2-1B-Instruct-Q4_K_M.gguf`
-3. Place it in the `models/` folder
-
-Or via terminal:
-```bash
-pip install huggingface_hub
-python -c "
-from huggingface_hub import hf_hub_download
-hf_hub_download(
-    repo_id='bartowski/Llama-3.2-1B-Instruct-GGUF',
-    filename='Llama-3.2-1B-Instruct-Q4_K_M.gguf',
-    local_dir='models'
-)
-"
-```
-
----
-
-## 💬 Chat Commands
+## Chat Commands
 
 | Command    | Description                                          |
 |------------|------------------------------------------------------|
@@ -124,7 +77,7 @@ hf_hub_download(
 
 ---
 
-## 📚 Teaching the AI New Knowledge
+## Teaching the AI New Knowledge
 
 Drop any `.txt` file into the `knowledge_base/` folder, then type `/ingest`:
 
@@ -147,7 +100,6 @@ The AI will instantly know this — no retraining needed.
 | CPU      | Any x86_64 | 4+ cores    |
 | GPU      | Not needed | Not needed  |
 
-GitHub Codespaces free tier (4-core, 8GB RAM) works perfectly.
 
 ---
 
@@ -162,14 +114,4 @@ Always show complete commands with explanations."""
 ```
 
 ---
-
-## 🧩 Adding a Bigger Model
-
-For better quality, swap to a 3B model (needs ~3GB RAM):
-
-1. Download `Llama-3.2-3B-Instruct-Q4_K_M.gguf` from HuggingFace
-2. Place in `models/`
-3. Edit `layer1_engine.py`:
-```python
-MODEL_FILE = "Llama-3.2-3B-Instruct-Q4_K_M.gguf"
-```
+License: MIT License
