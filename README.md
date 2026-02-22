@@ -15,42 +15,52 @@ It beats cloud AI for private, domain-specific knowledge tasks by combining:
 ## How the 5 Layers Work Together
 
 Architects:
-[USER PROMPT] 
-      │   "Write a Python script to visualize my server network."
-      ▼
-┌────────────────────────────────────────────────────────────┐
-│ LAYER 4: Short-Term Memory Buffer                          │
-│ - Checks last 5 messages.                                  │
-│ - Adds context: (User previously asked about 'Ubuntu').    │
-└──────────────────────────┬─────────────────────────────────┘
-                           │
-      ┌────────────────────┴────────────────────┐
-      ▼                                         ▼
-┌───────────────────────┐             ┌───────────────────────┐
-│ LAYER 3: Concept Graph│             │ LAYER 2: Vector Brain │
-│ (NetworkX)            │             │ (FAISS + MiniLM)      │
-│ - Node matched: Python│             │ - Embeds prompt.      │
-│ - Pulls related nodes:│             │ - Retrieves 3 closest │
-│   [Matplotlib, Linux] │             │   text chunks.        │
-└───────────┬───────────┘             └───────────┬───────────┘
-            │                                     │
-            └─────────────────┬───────────────────┘
-                              ▼
-┌────────────────────────────────────────────────────────────┐
-│ LAYER 5: Prompt Assembly & Personality Injector            │
-│ - Combines: Graph Keywords + FAISS Chunks + User Prompt    │
-│ - Injects: "You are a concise coder. temp=0.2"             │
-└───────────────────────────┬────────────────────────────────┘
-                            │
-                            ▼
-┌────────────────────────────────────────────────────────────┐
-│ LAYER 1: Small Language Core (Inference Engine)            │
-│ - llama.cpp running Llama-3.2-1B.Q4_K_M.gguf (Uses < 1GB)  │
-│ - Reads the massive assembled prompt.                      │
-│ - Generates perfect syntax and grammar.                    │
-└───────────────────────────┬────────────────────────────────┘
-                            │
-                      [ AI RESPONSE ]
+
+[USER PROMPT]
+      |
+      |  "Write a Python script to visualize my server network."
+      v
+
++--------------------------------------------------------------+
+| LAYER 4: Short-Term Memory Buffer                            |
+| - Checks last 5 messages                                     |
+| - Adds context: (User previously asked about 'Ubuntu')       |
++----------------------------+---------------------------------+
+                             |
+             +---------------+---------------+
+             |                               |
+             v                               v
+
++-----------------------------+   +-----------------------------+
+| LAYER 3: Concept Graph      |   | LAYER 2: Vector Brain       |
+| (NetworkX)                  |   | (FAISS + MiniLM)            |
+| - Node matched: Python      |   | - Embeds prompt             |
+| - Pulls related nodes:      |   | - Retrieves 3 closest       |
+|   [Matplotlib, Linux]       |   |   text chunks               |
++-------------+---------------+   +-------------+---------------+
+              |                                 |
+              +---------------+-----------------+
+                              |
+                              v
+
++--------------------------------------------------------------+
+| LAYER 5: Prompt Assembly & Personality Injector              |
+| - Combines: Graph Keywords + FAISS Chunks + User Prompt      |
+| - Injects: "You are a concise coder. temp=0.2"                |
++-----------------------------+--------------------------------+
+                              |
+                              v
+
++--------------------------------------------------------------+
+| LAYER 1: Small Language Core (Inference Engine)              |
+| - llama.cpp running Llama-3.2-1B.Q4_K_M.gguf (< 1GB RAM)     |
+| - Reads the massive assembled prompt                         |
+| - Generates clean syntax and grammar                         |
++-----------------------------+--------------------------------+
+                              |
+                              v
+
+                        [ AI RESPONSE ]
 
 ---
 
