@@ -11,24 +11,24 @@ It beats cloud AI for private, domain-specific knowledge tasks by combining:
 - **Layer 5** — Intelligent prompt assembler + persona injector
 
 ---
-## How the 5 Layers Work Together
+## How the 5 Layers Work Together (Example)
 ```mermaid
 flowchart TD
-    A["🧑 USER PROMPT<br/>Write a Python script to visualize my server network."]
+    A["USER PROMPT:<br/>Write a Python script to visualize my server network."]
 
-    A --> B["⚡ LAYER 4: Short-Term Memory Buffer<br/>• Checks last 5 messages<br/>• Adds context: User previously asked about Ubuntu"]
+    A --> B["LAYER 4: Short-Term Memory Buffer<br/>Checks last 5 messages<br/>Adds context: User previously asked about ___."]
 
     B --> C & D
 
-    C["🕸️ LAYER 3: Concept Graph<br/>NetworkX<br/>• Node matched: Python<br/>• Pulls related nodes: Matplotlib, Linux"]
+    C["LAYER 3: Concept Graph<br/>NetworkX<br/>Node matched: Python<br/>Pulls related nodes: ___, ___"]
 
-    D["🧠 LAYER 2: Vector Brain<br/>FAISS + MiniLM<br/>• Embeds prompt<br/>• Retrieves 3 closest text chunks"]
+    D["LAYER 2: Vector Brain<br/>FAISS + MiniLM<br/>Embeds prompt<br/>Retrieves 3 closest text chunks"]
 
-    C & D --> E["🔧 LAYER 5: Prompt Assembly and Personality Injector<br/>• Combines: Graph Keywords + FAISS Chunks + User Prompt<br/>• Injects personality: You are a concise coder. temp=0.2"]
+    C & D --> E["LAYER 5: Prompt Assembly and Personality Injector<br/>Combines: Graph Keywords + FAISS Chunks + User Prompt<br/>Injects personality: You are ___. temp=0.7"]
 
-    E --> F["⚙️ LAYER 1: Small Language Core<br/>llama.cpp · Llama-3.2-1B.Q4_K_M.gguf · Under 1GB<br/>• Reads the assembled prompt<br/>• Generates perfect syntax and grammar"]
+    E --> F["LAYER 1: Small Language Core<br/>Base: Llama-3.2-1B.Q4_K_M.gguf (Under 1GB RAM)<br/>Reads the assembled prompt<br/>Generates perfect syntax and grammar"]
 
-    F --> G["✅ AI RESPONSE"]
+    F --> G["AI RESPONSE"]
 
     style A fill:#1f2937,stroke:#58a6ff,color:#e6edf3
     style B fill:#1f2937,stroke:#58a6ff,color:#e6edf3
